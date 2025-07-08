@@ -1,31 +1,83 @@
 body {
-  font-family: sans-serif;
-  background: #f9f9f9;
+  background-color: #fdf6f0;
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+  margin: 0;
   padding: 2rem;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fffaf7;
+  border-radius: 25px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(255, 204, 204, 0.3);
+}
+
+h1 {
   text-align: center;
+  font-size: 2rem;
+  color: #ff99aa;
+  margin-bottom: 1.5rem;
 }
+
 form {
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
+
 input, select, textarea {
-  margin: 0.5rem;
-  padding: 0.5rem;
-  width: 200px;
+  background-color: #fff;
+  border: 1px solid #f0dcdc;
+  border-radius: 15px;
+  padding: 0.8rem;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
 }
-textarea {
-  resize: none;
-  height: 60px;
-}
+
 button {
-  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, #ffd1dc, #ffeaea);
+  border: none;
+  border-radius: 20px;
+  padding: 0.7rem;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
+
+button:hover {
+  background: linear-gradient(to right, #ffc1c8, #ffe1e7);
+}
+
+#book-list {
+  margin-top: 2rem;
+}
+
 .book {
-  border: 1px solid #ccc;
+  background-color: #fffdfb;
+  border-radius: 20px;
   padding: 1rem;
-  margin: 1rem auto;
-  width: 80%;
-  background: white;
-  border-radius: 8px;
-  text-align: left;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0e7e0;
+}
+
+.book h2 {
+  margin: 0 0 0.5rem 0;
+  color: #ff88a1;
+}
+
+.book p {
+  margin: 0.3rem 0;
+}
+
+.book button {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  background: linear-gradient(to right, #e0c3fc, #ffcfe2);
 }
