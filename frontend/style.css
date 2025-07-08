@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif;
+  background: #f9f9f9;
+  padding: 2rem;
+  text-align: center;
+}
+form {
+  margin-bottom: 2rem;
+}
+input, select, textarea {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 200px;
+}
+textarea {
+  resize: none;
+  height: 60px;
+}
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.book {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 1rem auto;
+  width: 80%;
+  background: white;
+  border-radius: 8px;
+  text-align: left;
+}
