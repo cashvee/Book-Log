@@ -1,7 +1,7 @@
 const form = document.getElementById("book-form");
 const bookList = document.getElementById("book-list");
 
-const API_URL = "http://localhost:3000/books";
+const API_URL = "https://book-log-oxwy.onrender.com/books";
 
 async function fetchBooks() {
   const res = await fetch(API_URL);
