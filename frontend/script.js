@@ -1,13 +1,20 @@
 const form = document.getElementById("book-form");
 const bookList = document.getElementById("book-list");
+const searchInput = document.getElementById("search");
 
 const API_URL = "https://book-log-oxwy.onrender.com/books";
 
-async function fetchBooks() {
+async function fetchBooks(searchTerm = "") {
   const res = await fetch(API_URL);
   const books = await res.json();
+
+  const filteredBooks = books.filter(book => {
+    const combined = `${book.title} ${book.author} ${book.status}`.toLowerCase();
+    return combined.includes(searchTerm.toLowerCase());
+  });
+
   bookList.innerHTML = "";
-  books.forEach(book => {
+  filteredBooks.forEach(book => {
     const div = document.createElement("div");
     div.className = "book";
     div.innerHTML = `
@@ -35,12 +42,12 @@ form.addEventListener("submit", async (e) => {
     body: JSON.stringify(book),
   });
   form.reset();
-  fetchBooks();
+  fetchBooks(searchInput.value); // preserve search filter
 });
 
 async function deleteBook(id) {
   await fetch(`${API_URL}/${id}`, { method: "DELETE" });
-  fetchBooks();
+  fetchBooks(searchInput.value); // preserve search filter
 }
 
 async function toggleStatus(id, currentStatus) {
@@ -50,7 +57,11 @@ async function toggleStatus(id, currentStatus) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ status: newStatus }),
   });
-  fetchBooks();
+  fetchBooks(searchInput.value); // preserve search filter
 }
+
+searchInput.addEventListener("input", (e) => {
+  fetchBooks(e.target.value);
+});
 
 fetchBooks();
