@@ -6,22 +6,45 @@ body {
   padding: 2rem;
 }
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #fffaf7;
-  border-radius: 25px;
-  padding: 2rem;
-  box-shadow: 0 6px 20px rgba(255, 204, 204, 0.3);
-}
-
 h1 {
   text-align: center;
   font-size: 2rem;
   color: #ff99aa;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
+/* Main layout container */
+.main-container {
+  display: flex;
+  max-width: 1100px;
+  margin: auto;
+  background-color: #fffaf7;
+  border-radius: 25px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(255, 204, 204, 0.3);
+  gap: 2rem;
+}
+
+/* Form section */
+.form-section {
+  flex: 1;
+}
+
+/* Book list section */
+.list-section {
+  flex: 2;
+  overflow-y: auto;
+  max-height: 75vh;
+}
+
+/* Divider */
+.divider {
+  width: 2px;
+  background-color: #ffe4e4;
+  border-radius: 1px;
+}
+
+/* Form styles */
 form {
   display: flex;
   flex-direction: column;
@@ -54,10 +77,6 @@ button:hover {
   background: linear-gradient(to right, #ffc1c8, #ffe1e7);
 }
 
-#book-list {
-  margin-top: 2rem;
-}
-
 .book {
   background-color: #fffdfb;
   border-radius: 20px;
@@ -80,4 +99,19 @@ button:hover {
   margin-top: 0.5rem;
   margin-right: 0.5rem;
   background: linear-gradient(to right, #e0c3fc, #ffcfe2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .list-section {
+    max-height: none;
+  }
 }

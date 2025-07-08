@@ -8,20 +8,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>📖 Book Log</h1>
-    <form id="book-form">
-      <input type="text" id="title" placeholder="Book Title" required />
-      <input type="text" id="author" placeholder="Author" required />
-      <select id="status">
-        <option value="Reading">Reading</option>
-        <option value="Finished">Finished</option>
-      </select>
-      <textarea id="review" placeholder="Write a review... 🌸" rows="4"></textarea>
-      <button type="submit">✨ Add Book ✨</button>
-    </form>
+  <h1>📖 My Book Log</h1>
 
-    <div id="book-list"></div>
+  <div class="main-container">
+    <div class="form-section">
+      <form id="book-form">
+        <input type="text" id="title" placeholder="Book Title" required />
+        <input type="text" id="author" placeholder="Author" required />
+        <select id="status">
+          <option value="Reading">Reading</option>
+          <option value="Finished">Finished</option>
+        </select>
+        <textarea id="review" placeholder="Write a review... 🌸" rows="4"></textarea>
+        <button type="submit">✨ Add Book ✨</button>
+      </form>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="list-section">
+      <div id="book-list"></div>
+    </div>
   </div>
 
   <script src="script.js"></script>
